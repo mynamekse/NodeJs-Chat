@@ -41,6 +41,11 @@ io.on('connection', function (socket) {
 
       if (!text)
         return;
+      if(text.length>50){
+        text="ข้อความเยอะเกินไป";
+        text=text + "กรุณาพิมพ์ไม่เกิน 50 ตัวอักษร";
+ 
+      }
 
       socket.get('name', function (err, name) {
         var data = {
